@@ -2,32 +2,34 @@
   "name": "hp15c-react",
   "version": "0.1.0",
   "private": true,
-	"scripts": {
+  "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test"
   },
   "dependencies": {
-		"history": "^4.7.2",
-		"mobx": "^3.3.1",
-		"mobx-react": "^4.3.3",
-		"mobx-react-router": "^4.0.1",
-		"mobx-state-tree": "^1.1.0",
-		"prop-types": "^15.6.0",
+    "@types/sprintf-js": "^1.1.2",
+    "history": "^4.7.2",
+    "mobx": "^3.3.1",
+    "mobx-react": "^4.3.3",
+    "mobx-react-router": "^4.0.1",
+    "mobx-state-tree": "^1.1.0",
+    "prop-types": "^15.6.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-		"react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "sprintf-js": "^1.1.2"
   },
-	"devDependencies": {
-		"@types/history": "^4.6.2",
-		"@types/jest": "^21.1.5",
-		"@types/node": "^8.0.47",
-		"@types/prop-types": "^15.5.2",
+  "devDependencies": {
+    "@types/history": "^4.6.2",
+    "@types/jest": "^21.1.5",
+    "@types/node": "^8.0.47",
+    "@types/prop-types": "^15.5.2",
     "@types/react": "^16.8.14",
     "@types/react-dom": "^16.8.4",
-		"@types/react-router-dom": "^4.2.1",
-		"cross-env": "^5.1.1",
-		"npm-run-all": "^4.1.2",
+    "@types/react-router-dom": "^4.2.1",
+    "cross-env": "^5.1.1",
+    "npm-run-all": "^4.1.2",
     "react-scripts": "2.1.8",
     "typescript": "^3.4.4"
   },

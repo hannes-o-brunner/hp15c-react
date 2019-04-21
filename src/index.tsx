@@ -20,9 +20,7 @@ import Calculator from "./calc/ui/CalculatorView";
 const browserHistory = createBrowserHistory();
 const router = new RouterStore();
 const history = syncHistoryWithStore(browserHistory, router);
-const calculator = CalculatorModel.create({
-	isOn: true,
-});
+const calculator = CalculatorModel.create({});
 
 // const session: Session = SessionModel.create({
 // 	locale: Language.en

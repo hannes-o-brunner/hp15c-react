@@ -1,23 +1,12 @@
+
 body {
 	margin: 0;
 }
-#stack {
-	float: right;
-}
-.stacki {
-	display: none;
-}
-#reg {
-	clear: right;
-	float: right;
-}
-#test {
-	clear: right;
-	float: right;
-}
+
 #frame {
 	position: relative;
-	height: 450;
+	float: left;
+	height: 450px;
 }
 #calc {
 	position: absolute;
@@ -26,49 +15,72 @@ body {
 }
 #press {
 	position: absolute;
-	width: 39;
-	height: 34;
+	width: 39px;
+	height: 34px;
 	overflow: hidden;
 	display: none;
 }
 #presskey {
 	position: absolute;
 }
+
 .preload {
 	display: none;
 }
+
 .lcd {
 	position: absolute;
-	display: none;
+/*	display: none;*/
 }
+
 .indicator {
 	display: none;
 	position: absolute;
-	top: 100;
+	top: 100px;
 	font-family: sans-serif;
 	font-size: 10px;
 }
 .indicator-on {
 	display: block;
 }
+
 #user {
-	left: 190;
+	left: 190px;
 }
 #f {
-	left: 230;
+	left: 230px;
 }
 #g {
-	left: 250;
+	left: 250px;
 }
 #trigmode {
-	left: 300;
+	left: 300px;
 }
 #complex {
-	left: 390;
+	left: 390px;
 }
 #program {
-	left: 410;
+	left: 410px;
 }
+
+#stack {
+	float: right;
+}
+
+.stacki {
+	display: none;
+}
+
+#reg {
+	clear: right;
+	float: right;
+}
+
+#test {
+	clear: right;
+	float: right;
+}
+
 .help {
 	position: absolute;
 	display: none;
