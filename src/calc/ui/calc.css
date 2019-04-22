@@ -34,7 +34,7 @@ body {
 }
 
 .indicator {
-	display: none;
+	/*display: none;*/
 	position: absolute;
 	top: 100px;
 	font-family: sans-serif;
