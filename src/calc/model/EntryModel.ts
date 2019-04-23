@@ -88,7 +88,6 @@ export const EntryModel = types.model("Entry", {
 		}
 
 		function afterAction(c: Calculator): void {
-			console.log("afterAction: " + JSON.stringify(c) + ", " + JSON.stringify(self));
 			if (self.isInEntry) {
 				if (self.entry && self.entry.length > 0 && self.entry.charAt(self.entry.length - 1) === 'e') {
 					self.entry += "0";
@@ -122,7 +121,7 @@ export const KeyTable: { [key: number]: Array<Operation | null> } = {
 	23: [Ops.OpSin, null, null],
 	24: [Ops.OpCos, null, null],
 	25: [Ops.OpTan, null, null],
-	26: [null, null, null],
+	26: [Ops.OpEex, null, null],
 	27: [Ops.Op4, null, null],
 	28: [Ops.Op5, null, null],
 	29: [Ops.Op6, null, null],

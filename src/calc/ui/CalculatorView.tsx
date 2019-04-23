@@ -114,14 +114,14 @@ class CalculatorView extends React.Component<CalculatorProps & RouteComponentPro
 				if (col == 6 && row >= 3) {
 					row = 3;
 				}
-				this.props.calculator.mouseDown(10 * row + col % 10);
+				this.props.calculator.keyDown(10 * row + col % 10);
 			}
 		}
 		e.preventDefault();
 	}
 
 	onMouseUp(e: React.MouseEvent<HTMLDivElement>): void {
-		this.props.calculator.mouseUp();
+		this.props.calculator.keyUp();
 	}
 
 	render(): JSX.Element | null {

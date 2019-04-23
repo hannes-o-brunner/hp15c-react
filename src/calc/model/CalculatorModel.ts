@@ -151,16 +151,17 @@ export const CalculatorModel = types.model("Calculator", {
 	})
 	.actions(self => { // tslint:disable-line:typedef
 
-		function keyDown(k: number, override: boolean = false): void {
-			console.log("keyDown(" + k + ")");
-			if (!self.isOn && k === POWER_KEY) {
+		function keyDown(keyCode: number, override: boolean = false): void {
+			console.log("keyDown(" + keyCode + ")");
+			self.entry.keyCode = keyCode;
+			if (!self.isOn && keyCode === POWER_KEY) {
 				self.powerOn();
 			} else if (!self.isOn) {
 				return;
-			} else if (k === POWER_KEY) {
+			} else if (keyCode === POWER_KEY) {
 				self.powerOff();
 			} else {
-				self.entry.keyDown(<Calculator> self, k, override);
+				self.entry.keyDown(<Calculator>self, keyCode, override);
 			}
 			// if (DelayUpdate === 0) {
 			self.updateDisplay();
@@ -174,6 +175,7 @@ export const CalculatorModel = types.model("Calculator", {
 		}
 
 		function keyUp(): void {
+			self.entry.keyCode = null;
 			// if (TemporaryDisplay) {
 			// 	TemporaryDisplay = false;
 			// 	if (DisplayTimeout === 0) {
@@ -186,14 +188,8 @@ export const CalculatorModel = types.model("Calculator", {
 			afterCreate() {
 				self.updateDisplay();
 			},
-			mouseDown(keyCode: number): void {
-				self.entry.keyCode = keyCode;
-				keyDown(keyCode);
-			},
-			mouseUp(): void {
-				self.entry.keyCode = null;
-				keyUp();
-			},
+			keyDown,
+			keyUp,
 			handleKey(keyCode: number): void {
 				keyDown(keyCode);
 				keyUp();

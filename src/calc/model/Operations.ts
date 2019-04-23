@@ -152,38 +152,40 @@ export const OpAdd = new Op.BinaryOp([40], (x, y) => { return y.add(x); });
 // export const OpCyx       = new Op.Operation([43,40],   op_Cyx);
 
 function op_input(c: Calculator, ch: string): void {
-	if (!c.entry.isInEntry) {
-		if (c.entry.entryState === EntryState.NONE) {
+	console.log("input(" + ch + ")");
+	const entry = c.entry;
+	if (!entry.isInEntry) {
+		if (entry.entryState === EntryState.NONE) {
 			c.push(ZERO); // c.push("");
 		}
-		c.entry.entry = "";
+		entry.entry = "";
 	}
-	if (!c.entry.entry || c.entry.entry.length === 0) {
+	if (!entry.entry || entry.entry.length === 0) {
 		switch (ch) {
 			case 'e':
-				c.entry.entry = "1";
+				entry.entry = "1";
 				break;
 			case '.':
-				c.entry.entry = "0";
+				entry.entry = "0";
 				break;
 		}
 	}
-	c.entry.entry = c.entry.entry + ch;
-	c.entry.entryState = EntryState.ENTRY;
+	entry.entry = entry.entry + ch;
+	entry.entryState = EntryState.ENTRY;
 }
 
 function op_enter(c: Calculator): void {
 	//	c.push(Stack[0], true);
 	c.push(c.x);
-	c.entry.entryState = EntryState.START;
 	// push() only pushes the real part,
 	// so copy the imaginary part too
 	// StackI[0] = StackI[1];
 	// NewStackLift = false;
+	c.entry.entryState = EntryState.START;
 }
 
 function op_clx(c: Calculator): void {
 	c.x = ZERO;
-	c.entry.entryState = EntryState.START;
 	//	NewStackLift = false;
+	c.entry.entryState = EntryState.START;
 }
