@@ -1,9 +1,12 @@
 
-import { Complex, ZERO, E, TEN } from "../app/Complex";
+import { Complex, ZERO, ONE, E, TEN } from "../app/Complex";
 
 import { Calculator } from "./CalculatorModel";
 import { EntryState } from "./EntryModel";
 import * as Op from "./Operation";
+
+const H = new Complex(100);
+const K = new Complex(1000);
 
 export const OpSqrt = new Op.UnaryOp([11], (x) => { return x.sqrt(); });
 // export const OpA         = new Op.Operation([42,11],   op_A);
@@ -19,11 +22,11 @@ export const OpLog = new Op.UnaryOp([43, 13], (x) => { return x.log(); });
 
 export const OpYx = new Op.BinaryOp([14], (x, y) => { return y.pow(x); });
 // export const OpD         = new Op.Operation([42,14],   op_D);
-// export const OpPct       = new Op.Operation([43,14],   op_pct);
+export const OpPct       = new Op.BinaryOp([43,14], (x, y) => { return y.mul(x.div(H)); });
 
 export const Op1x = new Op.UnaryOp([15], (x) => { return x.inv(); });
 // export const OpE         = new Op.Operation([42,15],   op_E);
-// export const OpDpct      = new Op.Operation([43,15],   op_dpct);
+export const OpDpct      = new Op.BinaryOp([43,15], (x, y) => { return x.div(y).sub(ONE).mul(H); });
 
 export const OpChs = new Op.UnaryOp([16], (x) => { return x.chs(); });
 //export const OpMatrix

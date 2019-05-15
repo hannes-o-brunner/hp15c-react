@@ -105,17 +105,11 @@ function runTests(calculator: Calculator): void {
 class CalculatorView extends React.Component<CalculatorProps & RouteComponentProps<any>, {}> {
 
 	onMouseDown(e: React.MouseEvent<HTMLImageElement>): void {
-		var x = e.pageX;
-		var y = e.pageY;
-		if (x >= 65 && x < 645 && y >= 155 && y < 405) {
-			var col = Math.floor((x - 65) / 57) + 1;
-			var row = Math.floor((y - 155) / 65) + 1;
-			if (col >= 1 && col <= 10 && row >= 1 && row <= 4) {
-				if (col == 6 && row >= 3) {
-					row = 3;
-				}
-				this.props.calculator.keyDown(10 * row + col % 10);
-			}
+		var col = Math.floor((e.pageX - 65) / 57) + 1;
+		var row = Math.floor((e.pageY - 155) / 65) + 1;
+		row = (col == 6 && row >= 3) ? 3 : row;
+		if (1 <= col && col <= 10 && 1 <= row && row <= 4) {
+			this.props.calculator.keyDown(10 * row + col % 10);
 		}
 		e.preventDefault();
 	}

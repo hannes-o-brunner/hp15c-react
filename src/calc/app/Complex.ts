@@ -89,14 +89,14 @@ export class Complex {
 
 }
 
-export const ZERO = new Complex(0, null);
+export const ZERO = new Complex(0);
 
-export const ONE = new Complex(1, null);
+export const ONE = new Complex(1);
 
-export const E = new Complex(Math.E, null);
+export const E = new Complex(Math.E);
 
-export const PI = new Complex(Math.PI, null);
+export const PI = new Complex(Math.PI);
 
-export const TEN = new Complex(10, null);
+export const TEN = new Complex(10);
 
 export const I = new Complex(0, 1);

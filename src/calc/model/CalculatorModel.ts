@@ -10,8 +10,9 @@ import { EntryModel, EntryState, POWER_KEY } from "./EntryModel";
 export type Calculator = typeof CalculatorModel.Type;
 
 export const CalculatorModel = types.model("Calculator", {
+	// power
 	isOn: types.optional(types.boolean, true),
-	// stack
+	// calculator stack
 	x: types.optional(types.frozen<Complex>(), ZERO),
 	y: types.optional(types.frozen<Complex>(), ZERO),
 	z: types.optional(types.frozen<Complex>(), ZERO),
@@ -23,7 +24,6 @@ export const CalculatorModel = types.model("Calculator", {
 	entry: types.optional(EntryModel, {}),
 })
 	.actions(self => { // tslint:disable-line:typedef
-
 		function init(): void {
 			self.x = ZERO;
 			self.y = ZERO;
@@ -31,7 +31,6 @@ export const CalculatorModel = types.model("Calculator", {
 			self.lastX = ZERO;
 			self.entry.init();
 		}
-
 		return {
 			powerOn(): void {
 				self.isOn = true;
@@ -41,7 +40,6 @@ export const CalculatorModel = types.model("Calculator", {
 				self.isOn = false;
 			},
 		};
-
 	})
 	.actions(self => ({
 		push(n: Complex): void {
@@ -195,4 +193,5 @@ export const CalculatorModel = types.model("Calculator", {
 				keyUp();
 			},
 		};
+
 	});

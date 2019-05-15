@@ -21,7 +21,7 @@ export const DigitModel = types.model("Digit", {
 	}));
 
 export const DisplayModel = types.model("Display", {
-	// display configuration
+	// configuration
 	displayMode: types.optional(types.number, 1), // 1=FIX 2=SCI 3=ENG
 	displayDigits: types.optional(types.number, 4),
 	// display
